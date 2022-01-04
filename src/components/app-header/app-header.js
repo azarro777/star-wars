@@ -15,21 +15,21 @@ export const AppHeader = () => {
     <header className='header'>
       <Link
         style={{ color: peoplePage }}
-        className='header__link'
+        className="header__link"
         to='/'
       >
         People
       </Link>
       <Link
         style={{ color: planetsPage }}
-        className='header__link'
+        className="header__link"
         to='/planets'
       >
         Planets
       </Link>
       <Link
         style={{ color: shipsPage }}
-        className='header__link'
+        className="header__link"
         to='/starships'
       >
         Starships
