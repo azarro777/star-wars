@@ -6,7 +6,7 @@ import { AppButton } from "../app-button/app-button";
 
 export const StarshipsPage = () => {
 	const [count, setCount] = useState(1);
-  const [people] = useState([]);
+  const [people, setPeople] = useState([]);
 	const [image, setImage] = useState('');
 
 	const description = {
@@ -16,7 +16,7 @@ export const StarshipsPage = () => {
 	}
 
 	useEffect(() => {
-    swService('starships', count);
+    swService('starships', count, setPeople);
 		setImage(swImage('starships', count));
   }, [count]);
 

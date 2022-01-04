@@ -6,7 +6,7 @@ import { AppButton } from "../app-button/app-button";
 
 export const PlanetsPage = () => {
 	const [count, setCount] = useState(1);
-  const [planet] = useState([]);
+  const [planet, setPlanet] = useState([]);
 	const [image, setImage] = useState('');
 
 	const description = {
@@ -16,7 +16,7 @@ export const PlanetsPage = () => {
 	}
 
 	useEffect(() => {
-    swService('planets', count);
+    swService('planets', count, setPlanet);
 		setImage(swImage('planets', count));
   }, [count]);
 

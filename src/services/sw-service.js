@@ -1,13 +1,13 @@
 import axios from 'axios';
 
-export const swService = (type, step) => {
+export const swService = async (type, step, saveData) => {
   const api = `https://swapi.dev/api/${type}/${step}`;
   return axios
     .get(api)
     .then((resp) => {
-      return resp.data;
+      saveData(resp.data);
     })
-    .catch((error) => console.error(error));
+    .catch(error => console.log(error));
 };
 
 export const swImage = (type, step) => {

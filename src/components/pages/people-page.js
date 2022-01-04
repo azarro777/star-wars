@@ -7,7 +7,7 @@ import { AppButton } from "../app-button/app-button";
 export const PeoplePage = () => {
 
 	const [count, setCount] = useState(1);
-  const [people] = useState([]);
+  const [people, setPeople] = useState([]);
 	const [image, setImage] = useState('');
 
 	const description = {
@@ -17,7 +17,7 @@ export const PeoplePage = () => {
 	}
 
 	useEffect(() => {
-    swService('people', count);
+		swService('people', count, setPeople);
 		setImage(swImage('characters', count));
   }, [count]);
 
@@ -31,7 +31,6 @@ export const PeoplePage = () => {
 			<div style={{textAlign: "center"}} onClick={nextPeople}>
 			<AppButton />
 			</div>
-			
     </div>
   );
 }
