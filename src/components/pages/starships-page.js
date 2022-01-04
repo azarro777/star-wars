@@ -6,7 +6,7 @@ import { AppButton } from "../app-button/app-button";
 
 export const StarshipsPage = () => {
 	const [count, setCount] = useState(1);
-  const [people, setPeople] = useState([]);
+  const [people] = useState([]);
 	const [image, setImage] = useState('');
 
 	const description = {
@@ -16,7 +16,7 @@ export const StarshipsPage = () => {
 	}
 
 	useEffect(() => {
-    swService('starships', count).then(result => setPeople(result));
+    swService('starships', count);
 		setImage(swImage('starships', count));
   }, [count]);
 
@@ -26,7 +26,7 @@ export const StarshipsPage = () => {
 	return (
     <div>
       <AppHeader />
-			<Card imageData={image} peopleData={people} desc={description}/>
+			<Card imageData={image} loadedData={people} desc={description}/>
 			<div style={{textAlign: "center"}} onClick={nextPeople}>
 			<AppButton />
 			</div>

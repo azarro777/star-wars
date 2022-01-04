@@ -7,7 +7,7 @@ import { AppButton } from "../app-button/app-button";
 export const PeoplePage = () => {
 
 	const [count, setCount] = useState(1);
-  const [people, setPeople] = useState([]);
+  const [people] = useState([]);
 	const [image, setImage] = useState('');
 
 	const description = {
@@ -17,7 +17,7 @@ export const PeoplePage = () => {
 	}
 
 	useEffect(() => {
-    swService('people', count).then(result => setPeople(result));
+    swService('people', count);
 		setImage(swImage('characters', count));
   }, [count]);
 
@@ -27,7 +27,7 @@ export const PeoplePage = () => {
 	return (
     <div>
       <AppHeader />
-			<Card imageData={image} peopleData={people} desc={description}/>
+			<Card imageData={image} loadedData={people} desc={description}/>
 			<div style={{textAlign: "center"}} onClick={nextPeople}>
 			<AppButton />
 			</div>
