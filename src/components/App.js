@@ -9,10 +9,10 @@ function App() {
   return (
     <>
       <Routes>
-        <Route exact path="/" element={<PeoplePage/>} />
-        <Route path='/planets' element={<PlanetsPage/>} />
+        <Route exact path="/star-wars" element={<PeoplePage/>} />
+        <Route path='/star-wars/planets' element={<PlanetsPage/>} />
         <Route/>
-        <Route path='/starships' element={<StarshipsPage/>} />
+        <Route path='/star-wars/starships' element={<StarshipsPage/>} />
       </Routes>
     </>
   );
