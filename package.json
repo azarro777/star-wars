@@ -2,7 +2,7 @@
   "name": "task-2-ajax",
   "version": "0.1.0",
   "private": true,
-  "homepage": "http://azarro777.github.io/task-2-ajax",
+  "homepage": "http://azarro777.github.io/star-wars",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
